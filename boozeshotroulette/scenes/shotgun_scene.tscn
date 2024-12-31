@@ -228,6 +228,7 @@ rotation = 1.5708
 scale = Vector2(22, 22)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Shotgun"]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qojv3")
 flip_h = true
 

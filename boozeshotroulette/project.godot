@@ -13,7 +13,7 @@ config_version=5
 config/name="BoozeshotRoulette"
 run/main_scene="res://scenes/shotgun_scene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://bullets.png"
 
 [display]
 
@@ -28,3 +28,4 @@ window/handheld/orientation=1
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
