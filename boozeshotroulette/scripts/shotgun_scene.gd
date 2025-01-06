@@ -21,16 +21,17 @@ func fire_blank():
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and shot_reset and !GlobalScript.is_loading:
-		var is_a_shot : bool = !(GlobalScript.shots[0] % 2 == 0)
-		shot_reset = false
-		shotreset_timer.start()
-		GlobalScript.shots.pop_front()
 		if GlobalScript.shots.is_empty():
 			reload_gun()
-		if is_a_shot:
-			fire_shot()
 		else:
-			fire_blank()
+			var is_a_shot : bool = !(GlobalScript.shots[0] % 2 == 0)
+			shot_reset = false
+			shotreset_timer.start()
+			GlobalScript.shots.pop_front()
+			if is_a_shot:
+				fire_shot()
+			else:
+				fire_blank()
 
 func _on_shotreset_timer_timeout() -> void:
 	shot_reset = true
