@@ -20,7 +20,7 @@ func fire_blank():
 	
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed and shot_reset:
+	if event is InputEventMouseButton and event.pressed and shot_reset and !GlobalScript.is_loading:
 		var is_a_shot : bool = !(GlobalScript.shots[0] % 2 == 0)
 		shot_reset = false
 		shotreset_timer.start()
@@ -56,7 +56,7 @@ func reload_gun():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(1).timeout
 	reload_gun()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

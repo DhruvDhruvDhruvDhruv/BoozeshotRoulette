@@ -7,12 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://b87t5jct4sw5s" path="res://assets/sfx/empty-gun-shot-6209.mp3" id="4_hi56r"]
 [ext_resource type="AudioStream" uid="uid://bxunttevey356" path="res://assets/sfx/lever-action-cocking-2-39680.mp3" id="5_qby02"]
 
-[sub_resource type="Gradient" id="Gradient_7b167"]
+[sub_resource type="Gradient" id="Gradient_fboet"]
 offsets = PackedFloat32Array(0, 0.896104, 1)
 colors = PackedColorArray(0.623529, 0, 0, 1, 0.223529, 0, 0, 1, 0.188235, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_x1p8x"]
-gradient = SubResource("Gradient_7b167")
+gradient = SubResource("Gradient_fboet")
 fill = 1
 fill_from = Vector2(0.516619, 0.529915)
 

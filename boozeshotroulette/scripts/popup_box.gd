@@ -55,6 +55,8 @@ func _on_shotgun_scene_shots_send(value: Array) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	visible = false
+	GlobalScript.is_loading = true
 	pass
 	
 
