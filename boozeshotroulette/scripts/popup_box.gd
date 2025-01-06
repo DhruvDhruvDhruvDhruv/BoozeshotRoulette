@@ -1,6 +1,6 @@
 extends Control
 
-var is_loading : bool = false
+#var is_loading : bool = false
 #var shell_array : Array = [1,1,1,0,0,0]
 const BLANK_SHELL_TEXTURE = preload("res://assets/sprites/BlankShell.png")
 const LIVE_SHELL_TEXTURE = preload("res://assets/sprites/LiveShell.png")
@@ -25,6 +25,7 @@ func load_shells(shells: Array) -> void:
 
 func resume():
 	animation_player.play_backwards("fade")
+	await get_tree().create_timer(0.5).timeout
 	visible = false
 
 func pause():
@@ -32,18 +33,19 @@ func pause():
 	animation_player.play("fade")
 
 func _on_panel_container_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.is_pressed() and !is_loading:
+	if event is InputEventMouseButton and event.is_pressed() and !GlobalScript.is_loading:
 		resume()
 
 
 func _on_shotgun_scene_shots_send(value: Array) -> void:
 	pause()
-	is_loading = true
+	GlobalScript.is_loading = true
 	await get_tree().create_timer(0.2).timeout
 	await load_shells(value)
 	await get_tree().create_timer(0.2).timeout
-	is_loading = false
 	resume()
+	await get_tree().create_timer(0.2).timeout
+	GlobalScript.is_loading = false
 	for n in ammo_array.get_children():
 		ammo_array.remove_child(n)
 		n.queue_free()
