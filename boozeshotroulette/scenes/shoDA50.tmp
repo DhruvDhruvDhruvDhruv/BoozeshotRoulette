@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://bnlk52qg20spl"]
 
-[ext_resource type="Script" path="res://scripts/shotgun_scene.gd" id="1_1l8ex"]
+[ext_resource type="Script" path="res://scenes/shotgun_scene.gd" id="1_1l8ex"]
 [ext_resource type="Texture2D" uid="uid://bb4b7q7ukg47g" path="res://assets/sprites/Shotgun animation Y.png" id="1_3owbi"]
 [ext_resource type="AudioStream" uid="uid://w4tq8eh4tti2" path="res://assets/sfx/shotgun_sound.wav" id="2_0bmb7"]
 [ext_resource type="PackedScene" uid="uid://5uebkx7jyanb" path="res://scenes/popup_box.tscn" id="3_tmb7s"]
@@ -263,6 +263,5 @@ stream = ExtResource("5_qby02")
 wait_time = 1.1
 one_shot = true
 
-[connection signal="shots_send" from="." to="CanvasLayer/PopupBox" method="_on_shotgun_scene_shots_send"]
 [connection signal="input_event" from="CanvasLayer/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="timeout" from="shotreset_timer" to="." method="_on_shotreset_timer_timeout"]
