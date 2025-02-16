@@ -4,11 +4,13 @@ extends Node2D
 @onready var shotreset_timer: Timer = $shotreset_timer
 @onready var popup_box: Control = $CanvasLayer/PopupBox
 signal shots_send(value : Array)
+@onready var shot_blank_label: Label = $CanvasLayer/ShotBlankLabel
 
 var shot_reset : bool = true
 
 func fire_shot():
 	print("boom")
+	shot_blank_label.text = "SHOT"
 	animation_player.play("fire")
 	shotgunsound.pitch_scale = randf_range(0.925,1.1)
 	shotgunsound.play(0)
@@ -16,6 +18,7 @@ func fire_shot():
 
 func fire_blank():
 	print("pew")
+	shot_blank_label.text = "BLANK"
 	animation_player.play("blank")
 	
 

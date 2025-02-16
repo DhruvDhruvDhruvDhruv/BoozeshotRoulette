@@ -18,6 +18,7 @@ func load_shells(shells: Array) -> void:
 		texture_rect.scale = Vector2(10, 10)
 		var control_holder = Control.new()
 		control_holder.add_child(texture_rect)
+		control_holder.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 		await get_tree().create_timer(0.4).timeout
 		load_shell_sound.pitch_scale = randf_range(0.975,1.05)
 		load_shell_sound.play()
